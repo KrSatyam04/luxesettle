@@ -576,6 +576,7 @@ main {
 .price-card.popular {
   border-color: rgba(212, 175, 55, 0.6);
   box-shadow: 0 28px 60px rgba(212, 175, 55, 0.12);
+  padding-top: 48px;
 }
 
 .price-card .tag {
