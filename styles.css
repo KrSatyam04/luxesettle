@@ -571,24 +571,25 @@ main {
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .price-card.popular {
   border-color: rgba(212, 175, 55, 0.6);
   box-shadow: 0 28px 60px rgba(212, 175, 55, 0.12);
-  padding-top: 48px;
 }
 
 .price-card .tag {
-  position: absolute;
-  top: 14px;
-  right: 14px;
+  align-self: flex-start;
   background: rgba(212, 175, 55, 0.15);
   color: var(--gold);
   padding: 6px 10px;
   border-radius: 12px;
   border: 1px solid var(--line);
   font-weight: 700;
+  margin-top: 6px;
 }
 
 .price {
