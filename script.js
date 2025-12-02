@@ -69,13 +69,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.querySelector('form[data-contact]');
   const formMessage = document.querySelector('[data-form-message]');
+  const submitButton = form?.querySelector('button[type="submit"]');
+
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      form.reset();
-      if (formMessage) {
-        formMessage.textContent = 'Thank you for sharing your plans. Our concierge team will reply within 24–48 hours.';
-        formMessage.style.display = 'block';
+
+      const formData = new FormData(form);
+
+      try {
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Submitting...';
+        }
+
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' },
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          form.reset();
+          if (formMessage) {
+            formMessage.textContent = 'Thank you for sharing your plans. Our concierge team will reply within 24–48 hours.';
+            formMessage.style.display = 'block';
+            formMessage.style.color = 'var(--gold)';
+          }
+        } else if (formMessage) {
+          formMessage.textContent = result.message || 'Something went wrong. Please try again or email support@luxesettle.com.';
+          formMessage.style.display = 'block';
+          formMessage.style.color = '#f87171';
+        }
+      } catch (error) {
+        if (formMessage) {
+          formMessage.textContent = 'We could not submit the form right now. Please try again in a moment or email support@luxesettle.com.';
+          formMessage.style.display = 'block';
+          formMessage.style.color = '#f87171';
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Submit Request';
+        }
       }
     });
   }
