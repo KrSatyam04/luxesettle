@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Luxe Settle</title>
+  <meta name="description" content="Tell Luxe Settle your relocation requirements for personalized student accommodation and arrival concierge.">
+  <meta property="og:title" content="Contact Luxe Settle">
+  <meta property="og:description" content="Fill out your study abroad details to get curated accommodation and arrival support.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://luxesettle.com/contact">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="index.html" class="logo"><span class="highlight">Luxe</span> Settle</a>
+      <button class="hamburger" aria-label="Toggle navigation"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="contact.html">Get Started</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a class="btn btn-primary" href="contact.html">Get Started</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="section-header fade-in">
+        <h1>Tell Us How We Can Help</h1>
+        <p>Fill out this form with your basic details and we’ll get back with personalized options.</p>
+      </div>
+    </section>
+
+    <section class="section fade-in">
+      <form class="card" data-contact>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input id="name" name="name" type="text" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number *</label>
+            <input id="whatsapp" name="whatsapp" type="tel" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="nationality">Nationality</label>
+            <input id="nationality" name="nationality" type="text">
+          </div>
+          <div class="form-group">
+            <label for="country">Destination Country</label>
+            <select id="country" name="country">
+              <option value="">Select country</option>
+              <option>Italy</option>
+              <option>Germany</option>
+              <option>France</option>
+              <option>Spain</option>
+              <option>Netherlands</option>
+              <option>Belgium</option>
+              <option>Austria</option>
+              <option>Portugal</option>
+              <option>Sweden</option>
+              <option>Denmark</option>
+              <option>Norway</option>
+              <option>Finland</option>
+              <option>Switzerland</option>
+              <option>United Kingdom</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="city">Destination City</label>
+            <input id="city" name="city" type="text">
+          </div>
+          <div class="form-group">
+            <label for="arrival">Planned Arrival Month &amp; Year</label>
+            <input id="arrival" name="arrival" type="text" placeholder="e.g., September 2024">
+          </div>
+          <div class="form-group">
+            <label for="level">Study Level</label>
+            <select id="level" name="level">
+              <option value="">Select level</option>
+              <option>Bachelor</option>
+              <option>Master</option>
+              <option>PhD</option>
+              <option>Language Program</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget">Budget for Accommodation</label>
+            <select id="budget" name="budget">
+              <option value="">Select range</option>
+              <option>€300–€500/month</option>
+              <option>€500–€800/month</option>
+              <option>€800–€1200/month</option>
+              <option>€1200+/month</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group" style="grid-column:1/-1;">
+            <label>Preferred Type of Stay</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="stay" value="Shared Apartment">Shared Apartment</label>
+              <label><input type="checkbox" name="stay" value="Private Room">Private Room</label>
+              <label><input type="checkbox" name="stay" value="Studio">Studio</label>
+              <label><input type="checkbox" name="stay" value="Student Residence">Student Residence</label>
+              <label><input type="checkbox" name="stay" value="Not Sure">Not Sure</label>
+            </div>
+          </div>
+          <div class="form-group" style="grid-column:1/-1;">
+            <label>Additional Services</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="services" value="Airport Pickup">Airport Pickup</label>
+              <label><input type="checkbox" name="services" value="Local Transfers">Local Transfers</label>
+              <label><input type="checkbox" name="services" value="Essentials & Documents">Essentials &amp; Documents Support</label>
+              <label><input type="checkbox" name="services" value="Complete Luxe Package">Complete Luxe Package</label>
+            </div>
+          </div>
+          <div class="form-group" style="grid-column:1/-1;">
+            <label for="message">Tell us more about your situation or preferences</label>
+            <textarea id="message" name="message" placeholder="Share timing, roommates, documents, or anything else."></textarea>
+          </div>
+        </div>
+        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+          <span class="notice">We respond within 24–48 hours on working days.</span>
+        </div>
+        <p data-form-message style="display:none; margin-top:12px; color: var(--gold);"></p>
+      </form>
+
+      <div class="card" style="margin-top:18px;">
+        <h3>Prefer to email us directly?</h3>
+        <p>Email: support@luxesettle.com</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><span class="highlight">Luxe</span> Settle</div>
+        <p>White-glove accommodation and arrival concierge for international students.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a><br>
+        <a href="services.html">Services</a><br>
+        <a href="how-it-works.html">How It Works</a><br>
+        <a href="destinations.html">Destinations</a><br>
+        <a href="pricing.html">Pricing</a><br>
+        <a href="about.html">About</a><br>
+        <a href="faq.html">FAQ</a><br>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Destinations</h4>
+        <a href="destinations.html">Italy</a><br>
+        <a href="destinations.html">United Kingdom</a><br>
+        <a href="destinations.html">Germany</a><br>
+        <a href="destinations.html">France</a><br>
+        <a href="destinations.html">Spain</a><br>
+        <a href="destinations.html">Netherlands</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@luxesettle.com</p>
+        <p>WhatsApp: +00 000 000 000</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="LinkedIn">IN</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> Luxe Settle. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
