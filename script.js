@@ -2,12 +2,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
 
+  const closeMobileMenu = () => {
+    hamburger?.classList.remove('active');
+    mobileMenu?.classList.remove('show');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    mobileMenu?.setAttribute('aria-hidden', 'true');
+  };
+
   if (hamburger) {
     hamburger.addEventListener('click', () => {
+      const nextState = !hamburger.classList.contains('active');
       hamburger.classList.toggle('active');
       mobileMenu?.classList.toggle('show');
+      hamburger.setAttribute('aria-expanded', String(nextState));
+      mobileMenu?.setAttribute('aria-hidden', String(!nextState));
     });
   }
+
+  mobileMenu?.querySelectorAll('a').forEach((link) =>
+    link.addEventListener('click', closeMobileMenu)
+  );
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
+  });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

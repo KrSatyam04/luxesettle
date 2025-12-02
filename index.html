@@ -16,10 +16,11 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header>
     <nav class="navbar" aria-label="Main Navigation">
       <a href="index.html" class="logo" aria-label="Luxe Settle home"><span class="highlight">Luxe</span> Settle</a>
-      <button class="hamburger" aria-label="Toggle navigation"><span></span></button>
+      <button class="hamburger" aria-label="Toggle navigation" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="services.html">Services</a></li>
@@ -32,7 +33,7 @@
         <li class="nav-cta"><a class="btn btn-primary" href="contact.html">Get Started</a></li>
       </ul>
     </nav>
-    <div class="mobile-menu" aria-label="Mobile Navigation">
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="Mobile Navigation">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="how-it-works.html">How It Works</a>
@@ -45,7 +46,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero section">
       <div class="fade-in">
         <h1>Premium Student Arrival &amp; Accommodation Concierge</h1>

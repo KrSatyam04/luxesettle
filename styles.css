@@ -29,6 +29,24 @@ body {
   min-height: 100vh;
 }
 
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 10px;
+  background: var(--gold);
+  color: #0b0b0f;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  z-index: 999;
+  box-shadow: var(--shadow);
+  transition: left 0.3s ease;
+}
+
+.skip-link:focus {
+  left: 20px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -178,7 +196,11 @@ header {
   display: none;
   flex-direction: column;
   gap: 10px;
-  padding: 0 20px 16px;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease;
 }
 
 .mobile-menu a {
@@ -697,7 +719,12 @@ textarea { min-height: 120px; }
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .hamburger { display: inline-flex; }
-  .mobile-menu.show { display: flex; }
+  .mobile-menu { display: flex; }
+  .mobile-menu.show {
+    max-height: 520px;
+    opacity: 1;
+    padding: 10px 20px 16px;
+  }
   .cta-strip { grid-template-columns: 1fr; }
   header { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
 }
