@@ -672,6 +672,17 @@ main {
   gap: 6px;
 }
 
+.phone-input {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.phone-input select {
+  min-width: 120px;
+}
+
 label {
   font-weight: 600;
   color: var(--text);
@@ -766,4 +777,5 @@ textarea { min-height: 120px; }
   .section { margin: 56px 0; }
   .strip { flex-direction: column; align-items: flex-start; }
   .image-stack { grid-template-columns: 1fr; }
+  .phone-input { grid-template-columns: 1fr; }
 }

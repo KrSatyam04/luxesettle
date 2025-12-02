@@ -70,12 +70,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form[data-contact]');
   const formMessage = document.querySelector('[data-form-message]');
   const submitButton = form?.querySelector('button[type="submit"]');
+  const whatsappCode = form?.querySelector('#whatsapp-code');
+  const whatsappNumber = form?.querySelector('#whatsapp-number');
+  const whatsappFull = form?.querySelector('#whatsapp-full');
 
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
       const formData = new FormData(form);
+
+      const code = whatsappCode?.value.trim();
+      const number = whatsappNumber?.value.trim();
+      const combined = code && number ? `${code} ${number}` : '';
+      if (whatsappFull) {
+        whatsappFull.value = combined;
+        formData.set('whatsapp', combined);
+      }
 
       try {
         if (submitButton) {

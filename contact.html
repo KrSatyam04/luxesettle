@@ -71,8 +71,47 @@
             <input id="email" name="email" type="email" required aria-required="true">
           </div>
           <div class="form-group">
-            <label for="whatsapp">WhatsApp Number *</label>
-            <input id="whatsapp" name="whatsapp" type="tel" required aria-required="true">
+            <label for="whatsapp-number">WhatsApp Number *</label>
+            <div class="phone-input">
+              <select id="whatsapp-code" aria-label="Country code" required aria-required="true">
+                <option value="">Code</option>
+                <option value="+43">+43 Austria</option>
+                <option value="+32">+32 Belgium</option>
+                <option value="+359">+359 Bulgaria</option>
+                <option value="+385">+385 Croatia</option>
+                <option value="+357">+357 Cyprus</option>
+                <option value="+420">+420 Czech Republic</option>
+                <option value="+45">+45 Denmark</option>
+                <option value="+372">+372 Estonia</option>
+                <option value="+358">+358 Finland</option>
+                <option value="+33">+33 France</option>
+                <option value="+995">+995 Georgia</option>
+                <option value="+49">+49 Germany</option>
+                <option value="+30">+30 Greece</option>
+                <option value="+36">+36 Hungary</option>
+                <option value="+354">+354 Iceland</option>
+                <option value="+353">+353 Ireland</option>
+                <option value="+39">+39 Italy</option>
+                <option value="+371">+371 Latvia</option>
+                <option value="+423">+423 Liechtenstein</option>
+                <option value="+370">+370 Lithuania</option>
+                <option value="+352">+352 Luxembourg</option>
+                <option value="+356">+356 Malta</option>
+                <option value="+31">+31 Netherlands</option>
+                <option value="+47">+47 Norway</option>
+                <option value="+48">+48 Poland</option>
+                <option value="+351">+351 Portugal</option>
+                <option value="+40">+40 Romania</option>
+                <option value="+421">+421 Slovakia</option>
+                <option value="+386">+386 Slovenia</option>
+                <option value="+34">+34 Spain</option>
+                <option value="+46">+46 Sweden</option>
+                <option value="+41">+41 Switzerland</option>
+                <option value="+44">+44 United Kingdom</option>
+              </select>
+              <input id="whatsapp-number" type="tel" placeholder="123 456 7890" required aria-required="true">
+            </div>
+            <input type="hidden" name="whatsapp" id="whatsapp-full">
           </div>
           <div class="form-group">
             <label for="nationality">Nationality</label>
