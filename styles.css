@@ -554,6 +554,89 @@ main {
   z-index: 1;
 }
 
+/* Destination Flags Grid */
+.destination-flag-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  margin-top: 12px;
+}
+
+@media (min-width: 1024px) {
+  .destination-flag-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .destination-flag-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+  }
+}
+
+.destination-flag-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  background: radial-gradient(circle at 18% 18%, rgba(212, 175, 55, 0.07), transparent 48%),
+    radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05), transparent 52%),
+    linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(0, 0, 0, 0.94));
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 12px 28px rgba(0, 0, 0, 0.34);
+  overflow: hidden;
+  isolation: isolate;
+  transition: all 260ms ease-out;
+}
+
+.destination-flag-card::after {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  background: linear-gradient(120deg, rgba(212, 175, 55, 0) 35%, rgba(212, 175, 55, 0.2) 50%, rgba(212, 175, 55, 0) 65%);
+  transform: translateX(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.destination-flag-card .flag {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.destination-flag-card span {
+  position: relative;
+  z-index: 1;
+  color: var(--offwhite);
+}
+
+.destination-flag-card:hover,
+.destination-flag-card:focus-visible {
+  transform: scale(1.03);
+  border-color: rgba(212, 175, 55, 0.92);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.35), 0 18px 32px rgba(0, 0, 0, 0.45);
+  color: #f9eed0;
+  outline: none;
+}
+
+.destination-flag-card:hover::after,
+.destination-flag-card:focus-visible::after {
+  opacity: 1;
+  animation: gold-sheen 0.85s ease-out;
+}
+
+.destination-flag-card:focus-visible {
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.35), 0 18px 32px rgba(0, 0, 0, 0.45), 0 0 0 2px var(--gold);
+}
+
 @keyframes gold-sheen {
   from {
     transform: translateX(-120%);
