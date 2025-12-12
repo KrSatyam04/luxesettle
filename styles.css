@@ -483,6 +483,91 @@ main {
   box-shadow: 0 18px 34px rgba(0, 0, 0, 0.4), 0 0 0 2px var(--gold);
 }
 
+/* Arrival Importance */
+.arrival-section .section-header p {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.arrival-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 10px;
+}
+
+@media (min-width: 1024px) {
+  .arrival-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .arrival-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+  }
+}
+
+.arrival-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.06), rgba(0, 0, 0, 0.85));
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 14px 28px rgba(0, 0, 0, 0.35);
+  color: var(--text);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.arrival-card::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(120deg, rgba(212, 175, 55, 0) 30%, rgba(212, 175, 55, 0.18) 50%, rgba(212, 175, 55, 0) 70%);
+  transform: translateX(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.arrival-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--offwhite);
+}
+
+.arrival-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.arrival-card:hover,
+.arrival-card:focus-within {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(212, 175, 55, 0.85);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.28), 0 18px 32px rgba(0, 0, 0, 0.45);
+}
+
+.arrival-card:hover::before,
+.arrival-card:focus-within::before {
+  opacity: 1;
+  animation: gold-sheen 0.9s ease-out;
+}
+
+.arrival-closing {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--offwhite);
+  font-weight: 600;
+}
+
+.arrival-cta {
+  text-align: center;
+  margin-top: 14px;
+}
+
 /* Most Popular Destinations – Luxe Gold Cards */
 .destination-gold-grid {
   display: grid;
