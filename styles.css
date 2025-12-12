@@ -83,7 +83,8 @@ header {
   font-weight: 700;
 }
 
-.logo .highlight {
+.logo .highlight,
+.brand .highlight {
   color: var(--gold);
 }
 
